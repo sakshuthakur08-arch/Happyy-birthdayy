@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffe7f0">
+<title>For Chhota Don 🤓🫶🏼</title>
+<style>
+:root{--pink:#ef75a5;--deep:#9b3f69;--ink:#573047;--cream:#fff8fb}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:linear-gradient(160deg,#fff8fb,#ffe6f0 52%,#fff6ee);overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+section{padding:64px 18px;text-align:center;position:relative}
+.wrap{max-width:760px;margin:auto}
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:32px 20px;text-align:center;position:relative;overflow:hidden}
+.tag{display:inline-block;background:#ffffffb8;border:1px solid #ffd0e1;border-radius:30px;padding:8px 14px;font-size:11px;letter-spacing:1.8px}
+h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:600}
+h1{font-size:clamp(46px,12vw,82px);line-height:.98;color:#d6538a;margin:24px 0 14px}
+h2{font-size:clamp(30px,7vw,43px);margin:16px 0}
+p{line-height:1.8}
+.lead{max-width:360px;margin:0 auto 16px}
+.btn{border:0;border-radius:30px;padding:13px 20px;margin:6px;background:linear-gradient(135deg,#f78bb5,#dc538d);color:white;box-shadow:0 8px 22px #df669333}
+.btn.secondary{background:#fff;color:#b74678;border:1px solid #f7c2d7;box-shadow:none}
+.card{background:#ffffffb8;border:1px solid #fff;border-radius:24px;padding:22px 16px;margin:22px auto;box-shadow:0 12px 35px #bd62851a}
+.countdown{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:22px 0}
+.time{background:#fff;border-radius:16px;padding:14px 3px;box-shadow:0 4px 14px #d35b8810}
+.time strong{display:block;color:#d6538a;font-size:clamp(23px,6vw,36px)}
+.time small{font-size:11px}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:26px}
+.polaroid{background:#fff;padding:9px 9px 16px;box-shadow:0 8px 22px #a54d701b;transform:rotate(-2deg);border-radius:5px}
+.polaroid:nth-child(even){transform:rotate(2deg)}
+.polaroid img{display:block;width:100%;height:230px;object-fit:cover;background:#ffe0eb;border-radius:3px}
+.polaroid p{font:14px Georgia,serif;margin:12px 0 0;line-height:1.4}
+.music-disc{height:94px;width:94px;margin:18px auto;border:7px solid #fff;border-radius:50%;display:grid;place-items:center;font-size:36px;background:conic-gradient(#ff9cc1,#ffe2ee,#f47eae,#ffb4ce);box-shadow:0 7px 22px #d65b8b33}
+.playing{animation:spin 5s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.note{text-align:left;white-space:pre-line;line-height:2;font-family:Georgia,serif}
+.heart{position:fixed;bottom:-40px;z-index:3;pointer-events:none;animation:rise linear forwards}
+@keyframes rise{to{transform:translateY(-115vh) rotate(35deg);opacity:0}}
+#surprise{display:none;position:fixed;inset:0;z-index:10;background:#573047eF;padding:18px;align-items:center;justify-content:center}
+#surprise.show{display:flex}
+.modal{width:100%;max-width:440px;max-height:85svh;overflow:auto;background:#fff5f9;border-radius:26px;padding:28px 20px;text-align:center;animation:pop .35s ease}
+@keyframes pop{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+footer{text-align:center;padding:30px 16px;font-size:12px}
+@media(min-width:600px){.gallery{grid-template-columns:repeat(3,minmax(0,1fr))}.polaroid img{height:250px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.heart,.playing{animation:none}}
+</style>
+</head>
+<body>
+<header class="hero" id="home">
+  <span class="tag">A LITTLE SURPRISE, JUST FOR YOU 🎀</span>
+  <h1>Chhota Don<br>🤓🫶🏼</h1>
+  <p class="lead">Someone's special day is getting closer… and a little surprise is waiting just for you. 💗</p>
+  <div style="font-size:42px;margin:6px">🎂 💌 🎁</div>
+  <p>Made with extra smiles and a little bit of magic.</p>
+  <button class="btn" onclick="document.querySelector('#countdown').scrollIntoView({behavior:'smooth'})">See your countdown ↓</button>
+</header>
+
+<section id="countdown"><div class="wrap">
+  <span class="tag">THE SPECIAL DAY ⏳</span><h2>Counting down to you!</h2>
+  <p>16 October 2026 · A day to celebrate YOU 💗</p>
+  <div class="card"><div class="countdown" id="timer">
+    <div class="time"><strong>00</strong><small>Days</small></div><div class="time"><strong>00</strong><small>Hours</small></div><div class="time"><strong>00</strong><small>Minutes</small></div><div class="time"><strong>00</strong><small>Seconds</small></div>
+  </div><p id="countMessage">Every second brings your day closer! 🥹</p></div>
+</div></section>
+
+<section id="memories"><div class="wrap">
+  <span class="tag">LITTLE MEMORY LANE 📸</span><h2>Pretty moments, pretty you</h2>
+  <p>A tiny gallery for someone who deserves a little extra love. 💕</p>
+  <div class="gallery">
+    <div class="polaroid"><img src="photos/photo1.jpeg" alt="Birthday memory 1"><p>That smile though ♡</p></div>
+    <div class="polaroid"><img src="photos/photo2.jpeg" alt="Birthday memory 2"><p>A little sunshine 🌼</p></div>
+    <div class="polaroid"><img src="photos/photo3.jpeg" alt="Birthday memory 3"><p>Pretty in every frame 💗</p></div>
+    <div class="polaroid"><img src="photos/photo4.jpeg" alt="Birthday memory 4"><p>One for the memory book 🎀</p></div>
+    <div class="polaroid"><img src="photos/photo5.jpeg" alt="Birthday memory 5"><p>Keep being you, Don 🤓</p></div>
+  </div>
+</div></section>
+
+<section id="music"><div class="wrap">
+  <span class="tag">A SONG FOR YOU 🎶</span><h2>Press play, Chhota Don</h2>
+  <div class="card">
+    <div class="music-disc" id="disc">🎵</div>
+    <p id="musicStatus">A soft little start, just for this moment.</p>
+    <audio id="song" preload="metadata"><source src="song.mp3" type="audio/mpeg"></audio>
+    <button class="btn" id="playBtn" onclick="toggleMusic()">▶ Play your song</button>
+    <p style="font-size:12px;color:#956a7e">Soft start → normal speed → gentle fade-out ♡</p>
+  </div>
+</div></section>
+
+<section id="letter"><div class="wrap">
+  <span class="tag">A LITTLE NOTE 💌</span><h2>Dear Chhota Don…</h2>
+  <div class="card note">Hey meri pyaari si Chhota Don 🤓🫶🏼,
+
+Aapka Happy Huppy aa raha haiii! 🥹🎂💗 Aur sach bataun, aapke liye ye chhota sa surprise banate hue mere face pe bhi smile aa rahi hai. Aap bas aise hi cute-cute rehna, apni pyaari si smile kabhi mat khona. 🎀
+
+Aapki life hamesha khushiyon, pyaar, sukoon aur bohot saari beautiful memories se bhari rahe. Jab bhi aap ye website dekho, bas ek baar smile kar dena—kyunki ye little surprise specially aapke liye hai. 🥹💞
+
+Aur haan ji, Happy Huppy in advance meri cute si Don! 🤓🎉 Aapko duniya bhar ki happiness mile, aapke saare achhe wishes poore hon, aur aapko hamesha aise log milen jo aapko dil se smile karayein. Aap genuinely special ho, aur aapka special day bhi bilkul aapki tarah pyaara hona chahiye. 💗🫶🏼
+
+Bas ek aur baar bol deti hoon… HAPPY HUPPY AAPKA! 🎂🎀💋
+
+Lots of pyaar aur ek big si virtual jhappi,
+Aapko smile karane wala koi ♡</div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="tag">ONE LAST THING 🎁</span><h2>Ready for your surprise?</h2>
+  <p>Okay, Don… this little gift is all yours. 👀</p>
+  <button class="btn" onclick="openSurprise()">Open your surprise 💝</button>
+</div></section>
+
+<div id="surprise" onclick="closeSurprise(event)"><div class="modal">
+  <div style="font-size:58px">🎂💗🎉</div><h2>A wish just for you!</h2>
+  <p style="line-height:1.9">May your year be full of happy surprises, beautiful memories, new adventures, and a thousand little reasons to smile. Never lose that spark, Chhota Don. 🫶🏼</p>
+  <p style="font-size:28px">🤓 + 🎀 + 💗</p>
+  <button class="btn" onclick="closeSurprise()">Awww ♡</button>
+</div></div>
+<footer>Made with ♡ for Chhota Don 🤓🫶🏼<br>A little website, a little surprise, lots of smiles.</footer>
+
+<script>
+const birthday = new Date(2026, 9, 16, 0, 0, 0);
+const timer = document.getElementById('timer');
+const countMessage = document.getElementById('countMessage');
+function updateCountdown(){
+  let diff = birthday - new Date();
+  if(diff <= 0){
+    timer.style.display='none';
+    countMessage.textContent="IT'S YOUR DAY! HAPPY BIRTHDAY, CHHOTA DON! 🎂💗";
+    document.querySelector('#countdown h2').textContent='Happy Birthday! 🎉';
+    return;
+  }
+  const values=[Math.floor(diff/86400000),Math.floor(diff%86400000/3600000),Math.floor(diff%3600000/60000),Math.floor(diff%60000/1000)];
+  timer.querySelectorAll('strong').forEach((el,i)=>el.textContent=String(values[i]).padStart(2,'0'));
+}
+updateCountdown();setInterval(updateCountdown,1000);
+
+function createHeart(){
+  const el=document.createElement('span');el.className='heart';
+  el.textContent=['♡','♥','💕','💗','✨'][Math.floor(Math.random()*5)];
+  el.style.left=Math.random()*100+'vw';el.style.fontSize=(12+Math.random()*20)+'px';
+  el.style.animationDuration=(6+Math.random()*6)+'s';document.body.appendChild(el);
+  setTimeout(()=>el.remove(),12500);
+}
+setInterval(createHeart,650);
+
+const song=document.getElementById('song'),playBtn=document.getElementById('playBtn');
+const disc=document.getElementById('disc'),musicStatus=document.getElementById('musicStatus');
+let ctx=null,gain=null,source=null,fadeTimer=null,fadeOutStarted=false;
+function clearFade(){if(fadeTimer){clearInterval(fadeTimer);fadeTimer=null;}}
+async function setupAudio(){
+  const Ctx=window.AudioContext||window.webkitAudioContext;
+  if(Ctx&&!ctx){ctx=new Ctx();source=ctx.createMediaElementSource(song);gain=ctx.createGain();source.connect(gain);gain.connect(ctx.destination);}
+  if(ctx&&ctx.state==='suspended')await ctx.resume();
+}
+function setVolume(v){if(gain&&ctx)gain.gain.setTargetAtTime(Math.max(0,Math.min(1,v)),ctx.currentTime,.08);else song.volume=Math.max(0,Math.min(1,v));}
+async function toggleMusic(){
+  if(!song.paused){song.pause();clearFade();playBtn.textContent='▶ Resume song';musicStatus.textContent='Paused for a little moment ♡';disc.classList.remove('playing');return;}
+  try{
+    await setupAudio();clearFade();fadeOutStarted=false;song.playbackRate=.75;setVolume(0);await song.play();
+    playBtn.textContent='❚❚ Pause song';musicStatus.textContent='A soft little beginning… 🎶';disc.classList.add('playing');
+    const start=performance.now(),duration=8000;
+    fadeTimer=setInterval(()=>{const p=Math.min(1,(performance.now()-start)/duration);song.playbackRate=.75+.25*p;setVolume(.85*p);if(p>=1){clearFade();musicStatus.textContent='Now playing at normal speed 💗';}},100);
+  }catch(e){musicStatus.textContent='Could not play the song. Check that song.mp3 is in the main website folder.';console.error(e);}
+}
+function fadeOutSong(){
+  if(song.paused||fadeOutStarted)return;fadeOutStarted=true;clearFade();
+  musicStatus.textContent='Let the melody fade away… ♡';
+  const initial=gain&&ctx?gain.gain.value:song.volume,start=performance.now(),duration=4000;
+  fadeTimer=setInterval(()=>{const p=Math.min(1,(performance.now()-start)/duration);setVolume(initial*(1-p));if(p>=1){clearFade();song.pause();song.currentTime=0;song.playbackRate=1;setVolume(0);playBtn.textContent='▶ Play your song again';disc.classList.remove('playing');musicStatus.textContent='A little melody to remember 💗';fadeOutStarted=false;}},100);
+}
+song.addEventListener('ended',fadeOutSong);
+function openSurprise(){document.getElementById('surprise').classList.add('show');for(let i=0;i<18;i++)setTimeout(createHeart,i*80);}
+function closeSurprise(e){if(!e||e.target.id==='surprise'||e.target.tagName==='BUTTON')document.getElementById('surprise').classList.remove('show');}
+</script>
+</body>
+</html>
